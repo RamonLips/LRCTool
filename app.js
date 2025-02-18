@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
-    document.querySelector('#search').addEventListener('click', findInfo)
+    const input = document.querySelector('#input').value
+    document.querySelector('#search').addEventListener('click', findInfo(input))
     document.querySelector('#input').addEventListener('keypress', function (e) {
         if (e.key === 'Enter') {
-            findInfo()
+            findInfo(input)
         }
     })
 })
 
-function findInfo() {
-    const input = document.querySelector('#input').value
+function findInfo(input) {
     const resultsContainer = document.querySelector('#divResult')
     let resultsHeader = document.querySelector('#results')
 
