@@ -1,8 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const input = document.querySelector('#input').value
-    document.querySelector('#search').addEventListener('click', findInfo(input))
+    document.querySelector('#search').addEventListener('click', function () {
+        const input = document.querySelector('#input').value
+        findInfo(input)
+    })
     document.querySelector('#input').addEventListener('keypress', function (e) {
         if (e.key === 'Enter') {
+            const input = document.querySelector('#input').value
             findInfo(input)
         }
     })
@@ -11,6 +14,8 @@ document.addEventListener('DOMContentLoaded', function () {
 function findInfo(input) {
     const resultsContainer = document.querySelector('#divResult')
     let resultsHeader = document.querySelector('#results')
+    resultsContainer.innerHTML = ''
+    resultsHeader.innerHTML = ''
 
     fetch(`https://lrclib.net/api/search?q=${input}`, {
         method: 'GET',
