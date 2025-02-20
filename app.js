@@ -21,11 +21,10 @@ function findInfo(input, resultsCount = 20) {
     resultsHeader.innerHTML = ''
 
     const resultsPerPage = 20
-    const maxPages = Math.ceil(resultsCount / resultsPerPage)
     let page = 1
 
     const fetchResults = (page) => {
-        if (page > maxPages || resultsLength >= resultsCount) {
+        if (resultsLength >= resultsCount) {
             return
         }
         fetch(`https://lrclib.net/api/search?q=${input}&page=${page}`, {
@@ -102,12 +101,19 @@ function findInfo(input, resultsCount = 20) {
                         navigator.clipboard.writeText(textToCopy)
                     })
                     div.appendChild(copyButton)
+
+                    const copyJsonButton = document.createElement('button')
+                    copyJsonButton.textContent = 'Copy JSON'
+                    copyJsonButton.addEventListener('click', () => {
+                        navigator.clipboard.writeText(JSON.stringify(element, null, 2))
+                    })
+                    div.appendChild(copyJsonButton)
+
                     resultsHeader.innerHTML = `Results: ${resultsLength}`
                     
                     resultsContainer.appendChild(div)
                 }
             })
-            // Fetch next page if there are more results
             fetchResults(page + 1)
         })
         .catch(error => {
