@@ -39,7 +39,6 @@ function findInfo(input) {
         resultsHeader.innerHTML = `Results for "${input}" (${data.length})`
 
         data.forEach(element => {
-            // console.log(element)
             const trackName = element.trackName
             const artistName = element.artistName
             const plainLyrics = element.plainLyrics
@@ -80,6 +79,7 @@ function findInfo(input) {
                 resultsContainer.appendChild(div)
             }
         })
+        resultsHeader.innerHTML = `Results: ${validResultsCount}`
     })
     .catch(error => {
         console.error('There has been a problem with your fetch operation:', error)
