@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lyrics</title>
+    <script src="../src/js/data.js" defer></script>
+    <script src="../src/js/popup.js" defer></script>
+    <link rel="stylesheet" href="../src/css/style.css">
+</head>
+<body>
+    <playback>
+        <audio id="audio">
+            <source src="" type="audio/mpeg">
+        </audio>
+    </playback>
+    <header>
+        <div class="container">
+            <div class="left">
+                <h1>SourceLink Lyric Search</h1>
+            </div>
+            <div class="center">
+                <div class="controls">
+                    <label class="showTimings control">
+                        <div class="switch">
+                            <input type="checkbox" id="globalToggle">
+                            <span class="slider round"></span>
+                        </div>
+                        <span class="label">Show Timestamps</span>
+                    </label>
+                </div>
+            </div>
+            <div class="right">
+                <input type="text" id="input" placeholder="Enter song or artist">
+                <button id="search">Search</button>
+            </div>
+        </div>
+    </header>
+    <main id="main">
+        <div class="container">
+            <h2 id="results"></h2>
+            <div id="divResult"></div>
+        </div>
+    </main>
+    <section id="playbackArea">
+        <div>
+            <div class="left">
+                <div class="cover-container">
+                    <img class="cover" src="../src/img/0x1900-000000-80-0-0.jpg" alt="">
+                </div>
+                <div class="info">
+                    <div>
+                        <p class="name">Like I would</p>
+                        <p class="artist">ZAYN</p>
+                    </div>
+                </div>
+                <div class="controls">
+                    <button class="prev"></button>
+                    <button class="playpause"></button>
+                    <button class="next"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="popUp" class="open">
+        <div class="header">
+            <div>
+                <p class="title">Like I would</p><span class="divider"> - </span><p class="artist">ZAYN</p>
+            </div>
+            <div>
+                <span class="close">&times;</span>
+            </div>
+        </div>
+        <div class="lyrics">
+            <div class="line">
+                <p class="line">Won't touch you like I do</p>
+                <p class="subline">He</p>
+            </div>
+            <div class="line">
+                <p class="line">Won't love you like I would</p>
+                <p class="subline">He</p>
+            </div>
+            <div class="line">
+                <p class="line">He don't know your body</p>
+            </div>
+            <div class="line">
+                <p class="line">He don't do you right</p>
+            </div>
+            <div class="line">
+                <p class="line">He won't love you like I wouldt</p>
+            </div>
+            <div class="line">
+                <p class="line">Love you like I would</p>
+            </div>
+            <div class="line">
+                <p class="line">Like I would</p>
+            </div>
+            <div class="line">
+                <p class="line">He, yeah</p>
+            </div>
+            <div class="line">
+                <p class="topline">He can't</p>
+                <p class="line">Love you like I would</p>
+            </div>
+            <div class="line">
+                <p class="topline">He can't</p>
+                <p class="line">Love you like I could</p>
+            </div>
+            <div class="line">
+                <p class="topline">He don't know your body</p>
+                <p class="line">He don't know your body</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
